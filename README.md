@@ -1,0 +1,1 @@
+# uninstall-asp.net-core-sdk
