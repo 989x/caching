@@ -1,0 +1,5 @@
+@baseurl = http://localhost:5000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ3dTdxMjYiLCJ1c2VybmFtZSI6Im5ld3VzZXIiLCJlbWFpbCI6Im5ld3VzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoicmVndWxhciIsImlhdCI6MTcwMTM1Mzc5OCwiZXhwIjoxNzAxNDM2NTk4fQ.9utTyUHlQym6-Kz-M6vganE84VTuSc3V0l_16PYU5LQ
+
+### Test Express
+GET {{baseurl}}/cache
