@@ -1,11 +1,11 @@
 import express, { Router } from 'express';
-import redisController from '../controllers/redis';
+import * as redis from '../controllers/redis';
 
 const router: Router = express.Router();
 
-router.get('/keys', redisController.getAllKeys);
-router.get('/get/:key', redisController.getKey);
-router.post('/set', redisController.setKey);
-router.delete('/delete/:key', redisController.deleteKey);
+router.get('/keys', redis.getAllKeys);
+router.get('/get/:key', redis.getKey);
+router.post('/set', redis.setKey);
+router.delete('/delete/:key', redis.deleteKey);
 
 export default router;
