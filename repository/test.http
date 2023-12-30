@@ -1,5 +1,27 @@
 @baseurl = http://localhost:5000
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ3dTdxMjYiLCJ1c2VybmFtZSI6Im5ld3VzZXIiLCJlbWFpbCI6Im5ld3VzZXJAZXhhbXBsZS5jb20iLCJyb2xlIjoicmVndWxhciIsImlhdCI6MTcwMTM1Mzc5OCwiZXhwIjoxNzAxNDM2NTk4fQ.9utTyUHlQym6-Kz-M6vganE84VTuSc3V0l_16PYU5LQ
 
-### Test Express
-GET {{baseurl}}/cache
+### GET all keys
+GET {{baseurl}}/redis/keys
+
+### GET a specific key
+GET {{baseurl}}/redis/get/user:4:profile
+
+### POST set a key
+POST {{baseurl}}/redis/set
+Content-Type: application/json
+
+{
+  "key": "user:4:profile",
+  "value": {
+    "userId": 4,
+    "username": "jane_doe",
+    "email": "jane@example.com",
+    "createdAt": "2023-03-01T14:30:00Z",
+    "updatedAt": "2023-03-10T10:45:00Z",
+    "tags": ["designer", "ui/ux"]
+    // ... other user profile information ...
+  }
+}
+
+### DELETE a specific key
+DELETE {{baseurl}}/redis/delete/user:3:profile
