@@ -1,6 +1,6 @@
 import express from 'express';
-import redisRoutes from './routes/redis';
-import { redisConnect } from '../config/redis';
+import redisRoutes from './routes/redis.routes';
+import { redisConnect } from '../config/redis.config';
 
 const app = express();
 const port = 5000;

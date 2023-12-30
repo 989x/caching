@@ -1,5 +1,5 @@
 import express, { Router } from 'express';
-import * as redis from '../controllers/redis';
+import * as redis from '../controllers/redis.controller';
 
 const router: Router = express.Router();
 

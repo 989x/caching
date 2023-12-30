@@ -42,31 +42,12 @@ git clone https://github.com/your-username/your-caching-repo.git
 ### 2.Install Dependencies:
 
 Navigate to the project directory and install the required dependencies.
+
 ```bash
-cd your-caching-repo
-npm install
+cd repository
+
+pnpm install
 ```
-
-### Project Structure
-
-The project structure is organized as follows:
-
-```lua
-repository/
-|-- src/
-|   |-- controllers/
-|   |   |-- redis.controller.js
-|   |-- routes/
-|   |   |-- redis.routes.js
-|   |-- app.js
-|-- package.json
-|-- readme.md
-```
-
-- `src/:` Contains the source code of the application.
-    - `controllers/:` Houses controllers responsible for handling business logic.
-    - `routes/:` Defines route handlers for the application.
-    - `app.js:` The main application file setting up Express, middleware, and starting the server.
 
 
 
