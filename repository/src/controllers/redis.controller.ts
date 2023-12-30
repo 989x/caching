@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import redisClient from '../../config/redis.config';
+import redisClient from '../config/redis.config';
 
 export const getAllKeys = async (req: Request, res: Response) => {
   try {
