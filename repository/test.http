@@ -1,17 +1,20 @@
 @baseurl = http://localhost:5000
 
 ### GET all keys
-GET {{baseurl}}/redis/keys
+GET {{baseurl}}/redis/all-keys
 
-### GET a specific key
-GET {{baseurl}}/redis/get/user:4:profile
+### GET all app keys
+GET {{baseurl}}/redis/app-keys
 
-### POST set a key
+### GET specific key
+GET {{baseurl}}/redis/get/example
+
+### POST set key
 POST {{baseurl}}/redis/set
 Content-Type: application/json
 
 {
-  "key": "user:4:profile",
+  "key": "example",
   "value": {
     "userId": 4,
     "username": "jane_doe",
@@ -19,9 +22,8 @@ Content-Type: application/json
     "createdAt": "2023-03-01T14:30:00Z",
     "updatedAt": "2023-03-10T10:45:00Z",
     "tags": ["designer", "ui/ux"]
-    // ... other user profile information ...
   }
 }
 
-### DELETE a specific key
-DELETE {{baseurl}}/redis/delete/user:3:profile
+### DELETE specific key
+DELETE {{baseurl}}/redis/delete/example

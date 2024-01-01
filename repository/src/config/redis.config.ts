@@ -7,6 +7,11 @@ const redisUrl = process.env.NODE_ENV === 'production'
   ? process.env.REDIS_URL_PROD
   : process.env.REDIS_URL_DEV;
 
+if (!redisUrl) {
+  console.error('REDIS_URL_PROD or REDIS_URL_DEV is missing in the environment variables.');
+  process.exit(1);
+}
+
 const redisClient = createClient({ url: redisUrl });
 console.log('Redis URL:', redisUrl);
 
@@ -19,3 +24,8 @@ export function redisConnect() {
 }
 
 export default redisClient;
+
+export const REDIS_CONFIG = {
+  KEY_PREFIX: 'example_app', 
+  EXPIRATION_TIME: 6 * 60 * 60, // 6 hours in seconds
+};
