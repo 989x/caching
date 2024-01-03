@@ -26,6 +26,5 @@ export function redisConnect() {
 export default redisClient;
 
 export const REDIS_CONFIG = {
-  KEY_PREFIX: 'example_app', 
   EXPIRATION_TIME: 6 * 60 * 60, // 6 hours in seconds
 };

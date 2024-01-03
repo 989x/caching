@@ -1,20 +1,26 @@
 @baseurl = http://localhost:5000
 
-### GET all keys
-GET {{baseurl}}/redis/all-keys
+# __________________________________________________ get
 
 ### GET all app keys
-GET {{baseurl}}/redis/app-keys
+GET {{baseurl}}/redis/all-keys
 
-### GET specific key
-GET {{baseurl}}/redis/get/example
+### GET key for entity
+GET {{baseurl}}/redis/get/user
 
-### POST set key
-POST {{baseurl}}/redis/set
+### GET key for entity
+GET {{baseurl}}/redis/get/blog
+
+# __________________________________________________ user 
+
+### GET specific key entity
+GET {{baseurl}}/redis/get/user/jane
+
+### POST set key for entry
+POST {{baseurl}}/redis/set/user/jane
 Content-Type: application/json
 
 {
-  "key": "example",
   "value": {
     "userId": 4,
     "username": "jane_doe",
@@ -25,5 +31,28 @@ Content-Type: application/json
   }
 }
 
-### DELETE specific key
-DELETE {{baseurl}}/redis/delete/example
+# __________________________________________________ blog
+
+### GET specific key for entity
+GET {{baseurl}}/redis/get/blog/101
+
+### POST set key for blog entry
+POST {{baseurl}}/redis/set/blog/101
+Content-Type: application/json
+
+{
+  "value": {
+    "blogId": 101,
+    "title": "Exploring Redis in Web Development",
+    "content": "Redis is a powerful tool for caching and data storage. Learn how to use Redis in web development.",
+    "author": "John Doe",
+    "createdAt": "2023-04-05T09:15:00Z",
+    "updatedAt": "2023-04-10T14:20:00Z",
+    "tags": ["redis", "web development"]
+  }
+}
+
+# __________________________________________________ delete
+
+### DELETE specific key for entity
+DELETE {{baseurl}}/redis/delete/example_app/example
