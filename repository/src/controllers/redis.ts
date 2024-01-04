@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import redisClient, { REDIS_CONFIG } from '../config/redis.config';
+import redisClient, { REDIS_CONFIG } from '../configs/redis';
 import { handleError } from '../helper/handling';
 
 const { EXPIRATION_TIME } = REDIS_CONFIG;

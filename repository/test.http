@@ -1,23 +1,44 @@
 @baseurl = http://localhost:5000
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyLTc3c3ZmNyIsImlhdCI6MTcwNDM1ODk1MiwiZXhwIjoxNzA0MzYyNTUyfQ.eJYnYKnAHlB3BhHQYbYushxDFZmWNT9TWgi8CwoKbfM
 
-# __________________________________________________ get
+# __________________________________________________ Authentication
+
+### POST Login to get JWT token
+POST {{baseurl}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "waltywinner",
+  "password": "clu93oab355xgx"
+}
+
+# __________________________________________________ Redis Operations
 
 ### GET all app keys
 GET {{baseurl}}/redis/all-keys
+Authorization: Bearer {{accessToken}}
 
 ### GET key for entity
 GET {{baseurl}}/redis/get/user
+Authorization: Bearer {{accessToken}}
 
 ### GET key for entity
 GET {{baseurl}}/redis/get/blog
+Authorization: Bearer {{accessToken}}
 
-# __________________________________________________ user 
+### DELETE specific key for entity
+DELETE {{baseurl}}/redis/delete/example_app/example
+Authorization: Bearer {{accessToken}}
+
+# __________________________________________________ User-specific Operations
 
 ### GET specific key entity
 GET {{baseurl}}/redis/get/user/jane
+Authorization: Bearer {{accessToken}}
 
 ### POST set key for entry
 POST {{baseurl}}/redis/set/user/jane
+Authorization: Bearer {{accessToken}}
 Content-Type: application/json
 
 {
@@ -31,13 +52,15 @@ Content-Type: application/json
   }
 }
 
-# __________________________________________________ blog
+# __________________________________________________ Blog-specific Operations
 
 ### GET specific key for entity
 GET {{baseurl}}/redis/get/blog/101
+Authorization: Bearer {{accessToken}}
 
 ### POST set key for blog entry
 POST {{baseurl}}/redis/set/blog/101
+Authorization: Bearer {{accessToken}}
 Content-Type: application/json
 
 {
@@ -51,8 +74,3 @@ Content-Type: application/json
     "tags": ["redis", "web development"]
   }
 }
-
-# __________________________________________________ delete
-
-### DELETE specific key for entity
-DELETE {{baseurl}}/redis/delete/example_app/example

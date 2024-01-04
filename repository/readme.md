@@ -82,6 +82,9 @@ pnpm i --save-dev typescript ts-node @types/node
 
 pnpm i express
 pnpm i --save-dev @types/express
+
+pnpm i jsonwebtoken
+pnpm i --save-dev @types/jsonwebtoken
 ```
 
 Next, install Redis and its corresponding type definitions.
