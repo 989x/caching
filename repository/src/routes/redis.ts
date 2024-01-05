@@ -1,8 +1,8 @@
-import express from 'express';
+import { Router } from 'express';
 import * as redis from '../controllers/redis';
 import * as auth from '../controllers/auth';
 
-const router = express.Router();
+const router = Router();
 
 router.get('/all-keys', auth.verifyToken, redis.getAllKeys);
 router.get('/get/:entity', auth.verifyToken, redis.getEntityKeys);
