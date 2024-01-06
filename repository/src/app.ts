@@ -1,6 +1,4 @@
-import express from "express";
-// import * as express from "express";
-import { Request, Response } from 'express';
+import express, { Request, Response } from 'express';
 import authRoutes from './routes/auth';
 import redisRoutes from './routes/redis';
 import { redisConnect } from './configs/redis';
