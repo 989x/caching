@@ -94,4 +94,12 @@ pnpm i redis
 pnpm i --save-dev @types/redis
 ```
 
+Install testing with jest
+
+```bash
+pnpm i --save-dev jest @types/jest ts-jest supertest @types/supertest
+
+pnpm ts-jest config:init
+```
+
 These dependencies are essential for the efficient caching functionality provided by this project.
