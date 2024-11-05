@@ -1,75 +1,42 @@
-# Caching System
+# Redis Management System
 
-**Overview**
+A simple Redis Management System built with Go and Fiber. This system provides a dashboard to view Redis cache keys, check the number of items within each cache, and delete unused cache entries. It also allows adding new keys for testing purposes.
 
-This documentation outlines the process and planning for the development of a caching system that integrates Redis with Docker. The deployment will be facilitated through a DigitalOcean Droplet.
+## Project Structure
 
-
-
-## System Components
-
-The system comprises the following components:
-
-### 1.Redis Integration:
-- Redis, a powerful in-memory data store, will be integrated into the system for efficient caching.
-
-### 2.Docker Deployment:
-- The application will be containerized using Docker, providing a consistent and portable environment.
-
-### 3.DigitalOcean Droplet:
-- Deployment will be orchestrated on a DigitalOcean Droplet, ensuring scalability and reliability.
-
-
-
-## Redis Management System
-
-The primary objective is to create a Redis management system using Node.js. This system will provide an interface for interacting with Redis, allowing users to perform key operations.
-
-
-
-## Development Environment
-
-To set up the caching system, follow these steps:
-
-### 1.Clone the Repository:
-
-- Clone the project repository to your local machine.
-
-```bash
-git clone https://github.com/your-username/your-caching-repo.git
+```plaintext
+redis-management-system/
+├── cmd/
+│   └── main.go               # Main entry point
+├── internal/
+│   ├── handlers/
+│   │   ├── dashboard.go      # Handles dashboard and key addition
+│   │   └── delete.go         # Handles cache deletion
+│   ├── redis/
+│   │   └── client.go         # Redis connection and data retrieval functions
+│   └── templates/
+│       └── dashboard.html    # HTML template for the dashboard
+├── .env.example              # Example environment variables file
+├── go.mod
+├── go.sum
+└── README.md
 ```
 
-### 2.Install Dependencies:
+## Setup
 
-Navigate to the project directory and install the required dependencies.
-```bash
-cd your-caching-repo
-npm install
-```
+1. Copy `.env.example` to `.env` and configure your Redis connection settings.
+2. Install dependencies:
+   ```bash
+   go mod tidy
+   ```
+3. Run the application:
+   ```bash
+   go run cmd/main.go
+   ```
+4. Access the dashboard at `http://localhost:8080`.
 
-### Project Structure
+## Features
 
-The project structure is organized as follows:
-
-```lua
-repository/
-|-- src/
-|   |-- controllers/
-|   |   |-- redis.controller.js
-|   |-- routes/
-|   |   |-- redis.routes.js
-|   |-- app.js
-|-- package.json
-|-- readme.md
-```
-
-- `src/:` Contains the source code of the application.
-    - `controllers/:` Houses controllers responsible for handling business logic.
-    - `routes/:` Defines route handlers for the application.
-    - `app.js:` The main application file setting up Express, middleware, and starting the server.
-
-
-
-## Conclusion
-
-This documentation provides an overview of the caching system's architecture, development environment setup, and details about the Redis management system. Follow the outlined steps to deploy and manage caching efficiently.
+- View all cache keys and their item counts.
+- Delete cache entries.
+- Add new keys for testing.

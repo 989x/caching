@@ -1,0 +1,31 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Output files
+*.out
+
+# Vendor directory (when using `go mod vendor`)
+/vendor/
+
+# Go test binaries
+*.test
+
+# Executable files
+/redis-management-system
+
+# Environment variables file
+.env
+
+# IDE and editor specific files
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+*.log
+
+# Dependency directories
+/go.sum
