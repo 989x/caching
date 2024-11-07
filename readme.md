@@ -7,22 +7,24 @@ A simple Redis Management System built with Go and Fiber. This system provides a
 ```plaintext
 redis-management-system/
 ├── cmd/
-│   └── main.go               # Main entry point
+│   └── main.go                # Main entry point
 ├── internal/
+│   ├── config/
+│   │   └── redis_config.go    # Redis configuration and initialization
 │   ├── handlers/
-│   │   ├── dashboard.go      # Handles dashboard and key addition
-│   │   └── delete.go         # Handles cache deletion
+│   │   ├── dashboard.go       # Handles dashboard and key addition
+│   │   └── delete.go          # Handles cache deletion
 │   ├── redis/
-│   │   └── client.go         # Redis connection and data retrieval functions
+│   │   └── client.go          # Redis functionality (GetAllKeys, AddKey, etc.)
 │   └── templates/
-│       └── dashboard.html    # HTML template for the dashboard
-├── .env.example              # Example environment variables file
+│       └── dashboard.html     # HTML template for the dashboard
+├── .env.example               # Example environment variables file
 ├── go.mod
 ├── go.sum
 └── README.md
 ```
 
-## Setup
+## Setup (Local Development)
 
 1. Copy `.env.example` to `.env` and configure your Redis connection settings.
 2. Install dependencies:

@@ -26,6 +26,3 @@
 
 # Logs
 *.log
-
-# Dependency directories
-/go.sum
