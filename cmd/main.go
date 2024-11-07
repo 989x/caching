@@ -2,14 +2,14 @@ package main
 
 import (
 	"log"
-	"redis-management-system/internal/config"
 	"redis-management-system/internal/handlers"
+	"redis-management-system/internal/redis"
 
 	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
-	config.InitRedisClient()
+	redis.InitRedisClient()
 
 	app := fiber.New()
 

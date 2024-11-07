@@ -9,13 +9,12 @@ redis-management-system/
 ├── cmd/
 │   └── main.go                # Main entry point
 ├── internal/
-│   ├── config/
-│   │   └── redis_config.go    # Redis configuration and initialization
 │   ├── handlers/
 │   │   ├── dashboard.go       # Handles dashboard and key addition
 │   │   └── delete.go          # Handles cache deletion
 │   ├── redis/
-│   │   └── client.go          # Redis functionality (GetAllKeys, AddKey, etc.)
+│   │   ├── client.go          # Redis functionality (GetAllKeys, AddKey, etc.)
+│   │   └── config.go          # Redis configuration setup
 │   └── templates/
 │       └── dashboard.html     # HTML template for the dashboard
 ├── .env.example               # Example environment variables file
