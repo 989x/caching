@@ -13,8 +13,7 @@ redis-management-system/
 │   │   ├── dashboard.go       # Handles dashboard and key addition
 │   │   └── delete.go          # Handles cache deletion
 │   ├── redis/
-│   │   ├── client.go          # Redis functionality (GetAllKeys, AddKey, etc.)
-│   │   └── config.go          # Redis configuration setup
+│   │   └── client.go          # Redis configuration and functionality (InitRedisClient, GetAllKeys, AddKey, etc.)
 │   └── templates/
 │       └── dashboard.html     # HTML template for the dashboard
 ├── .dockerignore              # Specifies files and directories to ignore in the Docker build
@@ -23,8 +22,6 @@ redis-management-system/
 ├── go.sum
 └── README.md
 ```
-
-นี่คือส่วนเพิ่มเติมใน **README.md** เพื่ออธิบายขั้นตอนการใช้งาน Docker:
 
 ---
 
