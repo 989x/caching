@@ -1,0 +1,31 @@
+# Git files and directories
+.git
+.gitignore
+
+# Environment files
+.env.example
+
+# Go build and cache files
+*.exe
+*.out
+*.a
+*.o
+*.so
+*.cgo
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependency directories (if applicable)
+node_modules/
