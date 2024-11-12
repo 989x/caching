@@ -39,11 +39,20 @@ To run the Redis Management System in a Docker container, follow these steps:
      ```
 
 3. **Run the Docker container**:
-   - Start the container using the `.env` file for environment variables:
+   - After building the Docker image, use the following command to run the container:
      ```bash
-     docker run --env-file .env -p 8101:8101 redis-management-system
+     docker run -d -p 8101:8101 redis-management-system
      ```
-   - This command will map port `8101` on your host to port `8101` in the container, allowing you to access the application from `http://localhost:8101`.
+   - Command explanation:
+     - `-d` runs the container in detached mode (background)
+     - `-p 8101:8101` maps port 8101 of the container to port 8101 of the host
+
+   - Once the container is running, you can check its status with:
+     ```bash
+     docker ps
+     ```
+
+   - Access the Redis Management System at `http://localhost:8101`.
 
 ## Setup (Local Development)
 
